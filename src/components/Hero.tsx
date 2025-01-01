@@ -1,4 +1,5 @@
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Hero() {
   return (
@@ -16,19 +17,19 @@ export default function Hero() {
           mobile development
         </p>
         <div className="flex justify-center space-x-4 animate-fade-in">
-          <a
-            href="/contact"
+          <Link
+            to="/contact"
             className="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-200 transition-colors duration-300 flex items-center"
           >
             Get Started
             <ArrowRight className="ml-2 h-5 w-5" />
-          </a>
-          <a
-            href="/portfolio"
+          </Link>
+          <Link
+            to="/portfolio"
             className="border-2 border-white px-8 py-3 rounded-full font-semibold hover:bg-white hover:text-black transition-colors duration-300"
           >
             View Our Work
-          </a>
+          </Link>
         </div>
       </div>
     </div>

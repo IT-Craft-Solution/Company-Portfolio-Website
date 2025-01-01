@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { services } from "../services";
+import { Link } from "react-router-dom";
 
 export default function Services() {
   return (
@@ -63,12 +64,12 @@ export default function Services() {
             <p className="text-gray-300 mb-8 max-w-2xl mx-auto">
               Let's discuss how we can help you achieve your digital goals.
             </p>
-            <a
-              href="/contact"
+            <Link
+              to="/contact"
               className="inline-block bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-100 transition-colors duration-300"
             >
               Get in Touch
-            </a>
+            </Link>
           </motion.div>
         </div>
       </motion.section>
