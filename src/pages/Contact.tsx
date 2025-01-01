@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { Mail, MapPin, Clock } from "lucide-react";
+import { contactDetails } from "../services";
 
 export default function Contact() {
   return (
@@ -91,41 +91,25 @@ export default function Contact() {
               transition={{ duration: 0.5 }}
               className="space-y-8"
             >
-              <div className="bg-gray-50 p-6 rounded-lg flex items-start space-x-4">
-                <Mail className="h-6 w-6 text-black" />
-                <div>
-                  <h3 className="font-semibold mb-1">Email</h3>
-                  <p className="text-gray-600">itcraftsolution1@gmail.com</p>
+              {contactDetails.map(({ Icon, title, content }, index) => (
+                <div
+                  key={index}
+                  className="bg-gray-50 p-6 rounded-lg flex items-start space-x-4"
+                >
+                  <Icon className="h-6 w-6 text-black" />
+                  <div>
+                    <h3 className="font-semibold mb-1">{title}</h3>
+                    <p className="text-gray-600">
+                      {content.map((line, i) => (
+                        <span key={i}>
+                          {line}
+                          <br />
+                        </span>
+                      ))}
+                    </p>
+                  </div>
                 </div>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg flex items-start space-x-4">
-                <MapPin className="h-6 w-6 text-black" />
-                <div>
-                  <h3 className="font-semibold mb-1">Location</h3>
-                  <p className="text-gray-600">
-                    Near by Jaddu's hotel,
-                    <br />
-                    Kalavad Road, Rajkot,
-                    <br />
-                    Gujarat, India
-                  </p>
-                </div>
-              </div>
-
-              <div className="bg-gray-50 p-6 rounded-lg flex items-start space-x-4">
-                <Clock className="h-6 w-6 text-black" />
-                <div>
-                  <h3 className="font-semibold mb-1">Business Hours</h3>
-                  <p className="text-gray-600">
-                    Monday - Friday: 9:00 AM - 6:00 PM
-                    <br />
-                    Saturday: 10:00 AM - 4:00 PM
-                    <br />
-                    Sunday: Closed
-                  </p>
-                </div>
-              </div>
+              ))}
             </motion.div>
           </div>
         </div>

@@ -1,4 +1,5 @@
 import { Linkedin, Mail } from "lucide-react";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -6,7 +7,16 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-semibold mb-4">IT Craft Solution</h3>
+            <Link to="/">
+              <div className="flex items-center space-x-2 spac-y-4">
+                <img
+                  className="h-8 w-8"
+                  alt="company-logo"
+                  src="../assets/company-logo.jpeg"
+                />
+                <h3 className="text-lg font-semibold">IT Craft Solution</h3>
+              </div>
+            </Link>
             <p className="text-gray-400">
               Innovative solutions for the digital world. We craft exceptional
               digital experiences.
@@ -72,6 +82,7 @@ export default function Footer() {
               <a
                 href="https://www.linkedin.com/in/itcraftsolution/"
                 className="text-gray-400 hover:text-white transition-colors"
+                target="_blank"
               >
                 <Linkedin className="h-6 w-6" />
               </a>

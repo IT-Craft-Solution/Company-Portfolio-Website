@@ -1,32 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, Smartphone } from "lucide-react";
-
-const services = [
-  {
-    icon: Code2,
-    title: "Web Development",
-    description:
-      "Custom web applications built with modern technologies like React, Node.js, and Python.",
-    features: [
-      "Responsive Design",
-      "API Integration",
-      "Performance Optimization",
-      "SEO-friendly",
-    ],
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile Development",
-    description:
-      "Native and cross-platform mobile applications for iOS and Android platforms.",
-    features: [
-      "Native Apps",
-      "Cross-platform Solutions",
-      "UI/UX Design",
-      "App Store Optimization",
-    ],
-  },
-];
+import { services } from "../services";
 
 export default function Services() {
   return (

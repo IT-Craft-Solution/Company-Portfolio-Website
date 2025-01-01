@@ -1,23 +1,5 @@
 import { motion } from "framer-motion";
-import { Users, Award, Clock, Globe } from "lucide-react";
-
-const milestones = [
-  {
-    year: "2021",
-    title: "Company Founded",
-    description: "Started with a team of 3 passionate developers",
-  },
-  {
-    year: "2022",
-    title: "First Major Project",
-    description: "Successfully delivered enterprise-level solutions",
-  },
-  {
-    year: "2024",
-    title: "Working on Major Project",
-    description: "Providing delivered Full stack client Satisfied solutions",
-  },
-];
+import { companyValues, milestones } from "../services";
 
 export default function About() {
   return (
@@ -40,28 +22,7 @@ export default function About() {
 
           {/* Company Values */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-            {[
-              {
-                icon: Users,
-                title: "Expert Team",
-                description: "Skilled professionals dedicated to excellence",
-              },
-              {
-                icon: Award,
-                title: "Quality First",
-                description: "Committed to delivering the best results",
-              },
-              {
-                icon: Clock,
-                title: "Timely Delivery",
-                description: "Meeting deadlines without compromising quality",
-              },
-              {
-                icon: Globe,
-                title: "Global Reach",
-                description: "Serving clients worldwide with dedication",
-              },
-            ].map((value, index) => (
+            {companyValues.map((value, index) => (
               <motion.div
                 key={value.title}
                 initial={{ opacity: 0, y: 20 }}
@@ -76,8 +37,6 @@ export default function About() {
               </motion.div>
             ))}
           </div>
-
-          {/* Team Section */}
 
           {/* Timeline */}
           <div>

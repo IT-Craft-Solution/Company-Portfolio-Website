@@ -1,19 +1,5 @@
 import { motion } from "framer-motion";
-import { Code2, Smartphone } from "lucide-react";
-
-const services = [
-  {
-    icon: Code2,
-    title: "Web Development",
-    description:
-      "Custom web applications built with modern technologies and best practices.",
-  },
-  {
-    icon: Smartphone,
-    title: "Mobile Development",
-    description: "Native and cross-platform mobile apps for iOS and Android.",
-  },
-];
+import { services } from "../../services";
 
 export default function Services() {
   return (
@@ -24,7 +10,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-16 "
         >
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Our Services
@@ -43,11 +29,13 @@ export default function Services() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: index * 0.1 }}
-              className="p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow duration-300"
+              className="p-6 bg-gray-50 rounded-lg hover:shadow-lg transition-shadow duration-300 flex flex-col items-center justify-center h-full"
             >
               <service.icon className="h-12 w-12 text-black mb-4" />
-              <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-              <p className="text-gray-600">{service.description}</p>
+              <h3 className="text-xl font-semibold mb-2 text-center">
+                {service.title}
+              </h3>
+              <p className="text-gray-600 text-center">{service.description}</p>
             </motion.div>
           ))}
         </div>

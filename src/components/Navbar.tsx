@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Menu, X, Code2 } from "lucide-react";
+import { useState, useEffect } from "react";
+import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 
 const navigation = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Services", href: "/services" },
-  { name: "Portfolio", href: "/portfolio" },
-  { name: "Contact", href: "/contact" },
+  { name: "Home", path: "/" },
+  { name: "About", path: "/about" },
+  { name: "Services", path: "/services" },
+  { name: "Portfolio", path: "/portfolio" },
+  { name: "Contact", path: "/contact" },
 ];
 
 export default function Navbar() {
@@ -33,7 +33,11 @@ export default function Navbar() {
         <div className="flex justify-between h-16 items-center">
           <div className="flex items-center">
             <Link to="/" className="flex items-center">
-              <Code2 className="h-8 w-8 text-white" />
+              <img
+                className="h-8 w-8 bg-none"
+                alt="company-logo"
+                src="../assets/company-logo.jpeg"
+              />
               <span className="ml-2 text-white font-bold text-xl">
                 IT Craft Solution
               </span>
@@ -44,9 +48,9 @@ export default function Navbar() {
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                to={item.href}
+                to={item.path}
                 className={`text-white hover:text-gray-300 transition-colors duration-200 font-medium ${
-                  location.pathname === item.href
+                  location.pathname === item.path
                     ? "border-b-2 border-white"
                     : ""
                 }`}
@@ -77,9 +81,9 @@ export default function Navbar() {
             {navigation.map((item) => (
               <Link
                 key={item.name}
-                to={item.href}
+                to={item.path}
                 className={`text-white block px-3 py-2 text-base font-medium hover:bg-gray-900 rounded-md ${
-                  location.pathname === item.href ? "bg-gray-900" : ""
+                  location.pathname === item.path ? "bg-gray-900" : ""
                 }`}
                 onClick={() => setIsMobileMenuOpen(false)}
               >
