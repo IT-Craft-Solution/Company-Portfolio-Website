@@ -70,7 +70,9 @@ export default function Contact() {
 
     if (validateForm()) {
       // Format the subject and body
-      const subject = encodeURIComponent("New Contact Form Submission");
+      const subject = encodeURIComponent(
+        `Project Inquiry from: ${formData.name} `
+      );
       const body = encodeURIComponent(`${formData.message}`);
 
       // Create Gmail compose URL
