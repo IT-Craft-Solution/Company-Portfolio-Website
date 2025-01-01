@@ -1,11 +1,5 @@
 import { motion } from "framer-motion";
-
-const stats = [
-  { number: "13+", label: "Projects Completed" },
-  { number: "4+", label: "Happy Clients" },
-  { number: "10+", label: "Team Members" },
-  { number: "3+", label: "Years Experience" },
-];
+import { stats } from "../../services";
 
 export default function Stats() {
   return (
