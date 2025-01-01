@@ -69,22 +69,20 @@ export default function Contact() {
     e.preventDefault();
 
     if (validateForm()) {
-      // Prepare email content
+      // Format the subject and body
       const subject = encodeURIComponent("New Contact Form Submission");
-      const body = encodeURIComponent(
-        `Name: ${formData.name}\n` +
-          `Email: ${formData.email}\n\n` +
-          `Message:\n${formData.message}`
-      );
+      const body = encodeURIComponent(`${formData.message}`);
 
-      // Open default email client with pre-filled content
-      window.location.href = `mailto:itcraftsolution1@gmail.com?subject=${subject}&body=${body}`;
+      // Create Gmail compose URL
+      const gmailUrl = `https://mail.google.com/mail/?view=cm&fs=1&to=itcraftsolution1@gmail.com&su=${subject}&body=${body}`;
+
+      // Open Gmail in new tab
+      window.open(gmailUrl, "_blank");
 
       // Clear form
       setFormData({ name: "", email: "", message: "" });
     }
   };
-
   // Rest of the component remains the same...
   return (
     <div className="pt-16">
