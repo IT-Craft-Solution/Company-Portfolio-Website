@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
             <Link to="/">
-              <div className="flex items-center space-x-2 spac-y-4">
+              <div className="flex items-center space-x-2 space-y-4">
                 <img
                   className="h-8 w-8"
                   alt="company-logo"
@@ -27,36 +27,36 @@ export default function Footer() {
             <h3 className="text-lg font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
               <li>
-                <a
-                  href="/about"
+                <Link
+                  to="/about"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   About Us
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/services"
+                <Link
+                  to="/services"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Services
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/portfolio"
+                <Link
+                  to="/portfolio"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Portfolio
-                </a>
+                </Link>
               </li>
               <li>
-                <a
-                  href="/contact"
+                <Link
+                  to="/contact"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   Contact
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
@@ -83,6 +83,7 @@ export default function Footer() {
                 href="https://www.linkedin.com/in/itcraftsolution/"
                 className="text-gray-400 hover:text-white transition-colors"
                 target="_blank"
+                rel="noopener noreferrer"
               >
                 <Linkedin className="h-6 w-6" />
               </a>
